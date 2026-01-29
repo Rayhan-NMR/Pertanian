@@ -2,10 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Analisis Tren dan Pola Pangan Utama Indonesia (2019-2025)</title>
+    <title>Analisis Tren dan Pola Pangan Utama Indonesia (2019–2026)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
@@ -16,23 +15,14 @@
             color: #ffffff;
         }
 
-        header {
+        header, footer {
             padding: 30px;
             text-align: center;
             background: #082032;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-
-        header p {
-            margin-top: 10px;
-            color: #b8dfff;
-            font-size: 15px;
-        }
+        header h1 { margin: 0; font-size: 26px; }
+        header p { color: #b8dfff; }
 
         .container {
             padding: 30px;
@@ -48,20 +38,11 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        .card h2 {
-            margin-top: 0;
-            color: #7dd3fc;
-        }
+        h2 { color: #7dd3fc; }
 
-        .card p, li {
+        p, li {
             color: #e0f2ff;
             line-height: 1.7;
-        }
-
-        /* TAMBAHAN: REFLEKSI PROYEK RATA KIRI-KANAN */
-        .refleksi p {
-            text-align: justify;
-            text-justify: inter-word;
         }
 
         canvas {
@@ -70,38 +51,44 @@
             padding: 10px;
         }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #082032;
-            color: #9ecbff;
-            font-size: 14px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(125,211,252,0.25);
         }
 
         .highlight-box {
-            background: rgba(255, 193, 7, 0.15);
+            background: rgba(255,193,7,0.15);
             border-left: 6px solid #facc15;
             padding: 18px;
             border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-            color: #fde047;
         }
 
         .insight-box {
-            background: rgba(125, 211, 252, 0.15);
+            background: rgba(125,211,252,0.15);
             border-left: 6px solid #7dd3fc;
             padding: 18px;
             border-radius: 10px;
-            margin-top: 15px;
         }
 
-        .insight-box h3 {
-            margin-top: 0;
-            color: #7dd3fc;
+        .divider {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fde047;
+            background: rgba(250,204,21,0.15);
+            padding: 25px;
+            border-radius: 14px;
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -109,98 +96,162 @@
 <body>
 
 <header>
-    <h1>Analisis Tren dan Pola Pangan Utama Indonesia (2019–2025)</h1>
-    <p>Berbasis Data Harga Sayuran dan Visualisasi Grafik</p>
+    <h1>Analisis Tren dan Pola Pangan Utama Indonesia</h1>
+    <p>Data Historis 2019–2025 dan Prediksi Harga 2026</p>
 </header>
 
 <div class="container">
 
     <div class="card">
-        <h2>Grafik Harga Sayuran (Rp/kg)</h2>
-        <canvas id="chartSayur" height="120"></canvas>
+        <h2>Grafik Harga Sayuran 2019–2025 (Rp/kg)</h2>
+        <canvas id="chartHistoris" height="120"></canvas>
     </div>
 
     <div class="card">
         <h2>Highlight Tahun Anomali</h2>
         <div class="highlight-box">
-            <h3>Tahun 2021–2022</h3>
+            <h3>2021–2022</h3>
             <p>
                 Lonjakan harga dipengaruhi pandemi COVID-19 dan cuaca ekstrem
-                yang mengganggu produksi serta distribusi pangan nasional.
+                yang mengganggu produksi dan distribusi pangan nasional.
             </p>
         </div>
     </div>
 
     <div class="card">
-        <h2>Analisis Kenaikan dan Penurunan Harga</h2>
+        <h2>Analisis Pergerakan Harga</h2>
         <ul>
             <li>2019–2020: Harga relatif stabil.</li>
             <li>2020–2021: Kenaikan akibat pandemi.</li>
-            <li>2022: Lonjakan karena cuaca ekstrem.</li>
-            <li>2023–2025: Harga mulai stabil.</li>
+            <li>2022: Lonjakan signifikan.</li>
+            <li>2023–2025: Mulai stabil.</li>
         </ul>
     </div>
 
+    <!-- PENJELASAN PANJANG DATA HISTORIS -->
     <div class="card">
-        <h2>Perbandingan Antar Sayuran</h2>
-        <ul>
-            <li>Cabai Merah: Volatilitas tinggi.</li>
-            <li>Bawang Merah: Dipengaruhi biaya produksi.</li>
-            <li>Tomat: Fluktuatif namun cepat panen.</li>
-            <li>Kentang: Relatif stabil.</li>
-        </ul>
+        <h2>Penjelasan Mendalam Data Harga Historis (2019–2025)</h2>
+        <p>
+            Pergerakan harga sayuran selama periode 2019–2025 menunjukkan hubungan
+            erat antara faktor ekonomi, kondisi iklim, dan kebijakan pangan nasional.
+            Pada tahun 2019 hingga awal 2020, harga relatif stabil karena kondisi
+            produksi dan distribusi masih berjalan normal serta daya beli masyarakat
+            berada pada tingkat yang seimbang.
+        </p>
+        <p>
+            Memasuki tahun 2020–2021, pandemi COVID-19 menyebabkan gangguan besar
+            pada rantai pasok pangan. Pembatasan mobilitas, penurunan tenaga kerja
+            pertanian, serta keterlambatan distribusi mengakibatkan pasokan berkurang
+            sementara permintaan tetap tinggi. Kondisi ini mendorong kenaikan harga
+            secara bertahap pada hampir seluruh komoditas.
+        </p>
+        <p>
+            Puncak kenaikan harga terjadi pada tahun 2022, terutama pada cabai merah
+            dan bawang merah. Selain dampak lanjutan pandemi, faktor cuaca ekstrem
+            seperti curah hujan tinggi dan perubahan pola musim tanam menyebabkan
+            gagal panen di beberapa daerah sentra produksi. Akibatnya, ketidakseimbangan
+            antara pasokan dan permintaan semakin besar.
+        </p>
+        <p>
+            Pada periode 2023–2025, harga mulai menunjukkan pola stabilisasi.
+            Hal ini dipengaruhi oleh pemulihan ekonomi, perbaikan sistem distribusi,
+            serta meningkatnya intervensi pemerintah melalui operasi pasar dan
+            penguatan cadangan pangan nasional.
+        </p>
     </div>
 
     <div class="card">
         <h2>Insight Utama</h2>
         <div class="insight-box">
-            <h3>Kesimpulan Data</h3>
             <p>
-                Cabai merah menunjukkan volatilitas harga tertinggi,
-                sedangkan kentang relatif stabil karena daya simpan lebih lama.
+                Cabai merah memiliki volatilitas tertinggi karena sensitif terhadap
+                perubahan cuaca, sementara kentang relatif stabil karena daya simpan
+                yang lebih lama dan pasokan yang lebih terkontrol.
             </p>
         </div>
     </div>
 
     <div class="card">
-        <h2>Tools dan Teknologi</h2>
-        <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>Chart.js (visualisasi data)</li>
-            <li>Data publik (BPS, Kementerian Pertanian, PIHPS)</li>
-        </ul>
+        <h2>Tabel Harga Sayuran 2019–2025</h2>
+        <table>
+            <tr>
+                <th>Tahun</th>
+                <th>Cabai Merah</th>
+                <th>Bawang Merah</th>
+                <th>Tomat</th>
+                <th>Kentang</th>
+            </tr>
+            <tr><td>2019</td><td>32.000</td><td>28.000</td><td>10.000</td><td>14.000</td></tr>
+            <tr><td>2020</td><td>34.000</td><td>30.000</td><td>11.000</td><td>15.000</td></tr>
+            <tr><td>2021</td><td>38.000</td><td>33.000</td><td>13.000</td><td>16.000</td></tr>
+            <tr><td>2022</td><td>52.000</td><td>40.000</td><td>16.000</td><td>18.000</td></tr>
+            <tr><td>2023</td><td>47.000</td><td>37.000</td><td>14.000</td><td>17.500</td></tr>
+            <tr><td>2024</td><td>49.000</td><td>39.000</td><td>15.000</td><td>18.000</td></tr>
+            <tr><td>2025</td><td>51.000</td><td>41.000</td><td>15.500</td><td>18.500</td></tr>
+        </table>
     </div>
 
-    <!-- REFLEKSI PROYEK (RATA KIRI-KANAN) -->
-    <div class="card refleksi">
-        <h2>Refleksi Proyek</h2>
+    <div class="divider">DATA PREDIKSI HARGA TAHUN 2026</div>
+
+    <!-- PENJELASAN PANJANG PREDIKSI -->
+    <div class="card">
+        <h2>Penjelasan Mendalam Prediksi Harga Sayuran Tahun 2026</h2>
         <p>
-            Melalui proyek ini, saya belajar mengolah data harga pangan menggunakan
-            sumber data publik dan menyajikannya dalam bentuk visualisasi grafik
-            untuk mengidentifikasi pola perubahan harga sayuran dari waktu ke waktu.
+            Prediksi harga sayuran tahun 2026 disusun berdasarkan pola tren historis
+            lima hingga tujuh tahun sebelumnya. Pendekatan ini mempertimbangkan
+            kecenderungan kenaikan harga tahunan akibat inflasi, peningkatan biaya
+            produksi pertanian, serta risiko perubahan iklim yang masih berlanjut.
         </p>
         <p>
-            Proyek ini saya kerjakan secara mandiri, sehingga membantu saya memahami
-            keterkaitan antara data, pemrograman, dan permasalahan nyata di bidang
-            pangan dan pertanian.
+            Cabai merah diprediksi mengalami kenaikan paling tinggi karena komoditas
+            ini sangat rentan terhadap cuaca ekstrem dan fluktuasi pasokan. Permintaan
+            yang tinggi sepanjang tahun juga membuat harga cabai lebih mudah bergejolak.
         </p>
         <p>
-            Pengalaman ini menumbuhkan ketertarikan saya terhadap bidang komputasi
-            dan pengolahan data, khususnya dalam penerapannya untuk analisis sektor
-            pertanian di jenjang pendidikan selanjutnya.
+            Bawang merah diperkirakan mengalami kenaikan moderat seiring meningkatnya
+            harga pupuk, benih, dan biaya transportasi. Sementara itu, tomat cenderung
+            lebih stabil karena memiliki masa tanam singkat sehingga pasokan dapat
+            cepat menyesuaikan permintaan pasar.
+        </p>
+        <p>
+            Kentang diprediksi tetap stabil dengan kenaikan terbatas karena daya simpan
+            yang panjang dan sistem distribusi yang lebih terorganisir. Secara umum,
+            prediksi harga 2026 mencerminkan kondisi pasar yang lebih terkendali
+            dibandingkan masa krisis sebelumnya.
         </p>
     </div>
 
     <div class="card">
+        <h2>Tabel Prediksi Harga 2026</h2>
+        <table>
+            <tr><th>Komoditas</th><th>Harga (Rp/kg)</th></tr>
+            <tr><td>Cabai Merah</td><td>53.000</td></tr>
+            <tr><td>Bawang Merah</td><td>43.000</td></tr>
+            <tr><td>Tomat</td><td>16.500</td></tr>
+            <tr><td>Kentang</td><td>19.500</td></tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Grafik Prediksi Harga Sayuran 2026</h2>
+        <canvas id="chartPrediksi" height="120"></canvas>
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="card">
         <h2>Kesimpulan</h2>
         <p>
-            Proyek ini menunjukkan bagaimana data sederhana dapat dimanfaatkan
-            untuk memahami dinamika sektor pangan di Indonesia.
+            Berdasarkan analisis data historis dan prediksi harga, dapat disimpulkan
+            bahwa harga pangan sangat dipengaruhi oleh faktor eksternal seperti kondisi
+            iklim, stabilitas ekonomi, dan kebijakan pemerintah. Fluktuasi harga yang
+            terjadi pada periode 2019–2022 menunjukkan pentingnya sistem distribusi
+            dan cadangan pangan yang kuat.
         </p>
         <p>
-            Visualisasi data membantu mengungkap pola tren dan anomali harga
-            yang tidak mudah terlihat melalui pengamatan kasat mata.
+            Prediksi harga tahun 2026 menunjukkan tren kenaikan yang relatif terkendali,
+            menandakan pemulihan dan stabilisasi sektor pangan nasional. Visualisasi
+            data dalam bentuk grafik dan tabel terbukti membantu dalam memahami
+            dinamika harga pangan serta mendukung pengambilan keputusan berbasis data.
         </p>
     </div>
 
@@ -211,18 +262,35 @@
 </footer>
 
 <script>
-    const ctx = document.getElementById('chartSayur').getContext('2d');
-
-    new Chart(ctx, {
+    new Chart(document.getElementById('chartHistoris'), {
         type: 'line',
         data: {
             labels: ['2019','2020','2021','2022','2023','2024','2025'],
             datasets: [
-                { label: 'Cabai Merah', data: [32000,34000,38000,52000,47000,49000,51000], borderWidth: 3, tension: 0.3 },
-                { label: 'Bawang Merah', data: [28000,30000,33000,40000,37000,39000,41000], borderWidth: 3, tension: 0.3 },
-                { label: 'Tomat', data: [10000,11000,13000,16000,14000,15000,15500], borderWidth: 3, tension: 0.3 },
-                { label: 'Kentang', data: [14000,15000,16000,18000,17500,18000,18500], borderWidth: 3, tension: 0.3 }
+                { label: 'Cabai Merah', data: [32000,34000,38000,52000,47000,49000,51000], borderWidth: 3 },
+                { label: 'Bawang Merah', data: [28000,30000,33000,40000,37000,39000,41000], borderWidth: 3 },
+                { label: 'Tomat', data: [10000,11000,13000,16000,14000,15000,15500], borderWidth: 3 },
+                { label: 'Kentang', data: [14000,15000,16000,18000,17500,18000,18500], borderWidth: 3 }
             ]
+        },
+        options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('chartPrediksi'), {
+        type: 'bar',
+        data: {
+            labels: ['Cabai Merah','Bawang Merah','Tomat','Kentang'],
+            datasets: [{
+                label: 'Prediksi Harga 2026 (Rp/kg)',
+                data: [53000,43000,16500,19500],
+                backgroundColor: [
+                    'rgba(239,68,68,0.7)',
+                    'rgba(249,115,22,0.7)',
+                    'rgba(34,197,94,0.7)',
+                    'rgba(59,130,246,0.7)'
+                ],
+                borderRadius: 8
+            }]
         },
         options: { responsive: true }
     });
